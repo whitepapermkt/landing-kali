@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Whitepaper — Entiende los negocios de México en 5 minutos</title>
+<meta name="description" content="Cada mañana, las noticias de negocios que importan en México, explicadas con claridad. Únete a más de 14,500 suscriptores." />
+<meta name="theme-color" content="#171717" />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<meta property="og:title" content="Whitepaper — Entiende los negocios de México en 5 minutos" />
+<meta property="og:description" content="El briefing matutino y el análisis empresarial que leen los empresarios mexicanos." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_MX" />
+<meta property="og:site_name" content="Whitepaper" />
+<meta property="og:image" content="assets/mockup.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Whitepaper — Entiende los negocios de México en 5 minutos" />
+<meta name="twitter:description" content="El briefing matutino y el análisis empresarial que leen los empresarios mexicanos." />
+<meta name="twitter:image" content="assets/mockup.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Whitepaper — Suscripción",
+  "description": "Briefing diario de negocios y análisis empresarial de México. Incluye artículos, podcasts y archivo completo.",
+  "brand": { "@type": "Brand", "name": "Whitepaper" },
+  "offers": [
+    { "@type": "Offer", "name": "Plan anual", "price": "1590", "priceCurrency": "MXN" },
+    { "@type": "Offer", "name": "Plan mensual", "price": "189", "priceCurrency": "MXN" }
+  ]
+}
+</script>
+<style>
+  /* ============ Mobile-first: estilos base = móvil ============ */
+  :root {
+    --cta: #ee4d3a;
+    --cta-hover: #e23a26;
+    --paper: #faf9f7;
+    --ink: #141414;
+    --neutral-900: #171717;
+    --neutral-800: #262626;
+    --neutral-600: #525252;
+    --neutral-500: #737373;
+    --neutral-200: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { text-decoration: none; color: inherit; }
+  .font-display {
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+    letter-spacing: -0.015em;
+  }
+  main { width: 100%; padding-bottom: 120px; /* espacio para el sticky CTA */ }
+  section { padding: 56px 20px; }
+  .wrap { max-width: 72rem; margin: 0 auto; }
+  .wrap-md { max-width: 48rem; margin: 0 auto; }
+
+  /* ---------- Top bar ---------- */
+  .topbar { border-bottom: 1px solid var(--neutral-200); background: #fff; }
+  .topbar-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .topbar img { height: 20px; width: auto; }
+  .topbar .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px; /* tap target */
+    border-radius: 999px;
+    background: var(--neutral-900);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  .topbar .nav-cta:hover { background: var(--cta); }
+
+  /* ---------- Botones ---------- */
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* móvil: botón a ancho completo */
+    min-height: 52px;
+    border-radius: 8px;
+    background: var(--cta);
+    padding: 15px 28px;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 12px 28px -12px rgba(238, 77, 58, 0.55);
+    transition: all 0.2s ease;
+  }
+  .btn-cta:hover { background: var(--cta-hover); transform: translateY(-2px); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+    border-bottom: 1px solid var(--neutral-900);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { background: #fff; border-bottom: 1px solid var(--neutral-200); padding: 44px 20px 56px; }
+  .hero-grid { max-width: 72rem; margin: 0 auto; display: grid; gap: 40px; align-items: center; }
+  .hero .proof-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--neutral-200);
+    border-radius: 999px;
+    background: var(--paper);
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--neutral-600);
+  }
+  .hero .proof-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cta); }
+  .hero h1 {
+    margin: 22px 0 0;
+    font-size: clamp(2.5rem, 9vw, 4rem); /* fluido: móvil → desktop */
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+  .hero h1 em { font-style: italic; color: var(--cta); }
+  .hero p.lead {
+    margin: 20px 0 0;
+    max-width: 34rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--neutral-500);
+  }
+  .hero p.lead strong { font-weight: 600; color: var(--neutral-800); }
+  .hero .cta-wrap { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+  .hero .fine-print { font-size: 0.875rem; color: var(--neutral-500); margin: 0; text-align: center; }
+  .hero .fine-print strong { color: var(--neutral-800); font-weight: 600; }
+  .hero-figure { margin: 0; position: relative; }
+  .hero-figure img { border-radius: 12px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.35); }
+  .hero-figure figcaption { margin-top: 12px; font-size: 0.8125rem; color: var(--neutral-500); text-align: center; }
+
+  /* ---------- Stats strip ---------- */
+  .stats { background: var(--neutral-900); color: #fff; padding: 36px 20px; }
+  .stats-grid {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .stat .num em { color: var(--cta); font-style: normal; }
+  .stat .label { margin: 8px 0 0; font-size: 0.8125rem; color: #a3a3a3; }
+
+  /* ---------- Section header ---------- */
+  .section-header { max-width: 42rem; margin: 0 auto; text-align: center; }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cta);
+    margin: 0;
+  }
+  .section-header h2 {
+    font-size: clamp(1.875rem, 6vw, 2.75rem);
+    line-height: 1.05;
+    color: var(--neutral-900);
+    margin: 14px 0 0;
+    font-weight: 400;
+  }
+  .section-header .lead { margin: 16px 0 0; font-size: 1rem; line-height: 1.6; color: var(--neutral-500); }
+
+  /* ---------- Cómo funciona ---------- */
+  .steps { display: grid; gap: 28px; margin-top: 44px; }
+  .step { display: flex; gap: 18px; align-items: flex-start; }
+  .step .num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--neutral-900);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  .step h3 { margin: 8px 0 0; font-size: 1.25rem; font-weight: 400; }
+  .step p { margin: 8px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--neutral-500); }
+
+  /* ---------- Pricing ---------- */
+  .pricing-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .pricing-grid { max-width: 56rem; margin: 44px auto 0; display: grid; gap: 24px; }
+  .price-card { border-radius: 16px; padding: 32px 24px; }
+  .price-card.featured {
+    background: var(--neutral-900);
+    color: #fff;
+    box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.4);
+  }
+  .price-card.plain { background: var(--paper); border: 1px solid var(--neutral-200); }
+  .price-card .tag {
+    display: inline-block;
+    border-radius: 999px;
+    background: var(--cta);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .price-card h3 { margin: 18px 0 0; font-size: 1.625rem; font-weight: 400; }
+  .price-card .amount { margin: 18px 0 0; font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .price-card .amount .per { font-size: 0.9375rem; font-weight: 500; color: #a3a3a3; }
+  .price-card.plain .amount .per { color: var(--neutral-500); }
+  .price-card .strike { margin: 10px 0 0; font-size: 0.9375rem; color: #a3a3a3; }
+  .price-card .strike s { margin-right: 6px; }
+  .price-card.plain .strike { color: var(--neutral-500); }
+  .price-card ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+  .price-card li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9375rem; line-height: 1.5; }
+  .price-card li svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; color: var(--cta); }
+  .price-card .plan-cta {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .price-card.featured .plan-cta { background: var(--cta); color: #fff; }
+  .price-card.featured .plan-cta:hover { background: var(--cta-hover); transform: translateY(-2px); }
+  .price-card.plain .plan-cta { background: var(--neutral-900); color: #fff; }
+  .price-card.plain .plan-cta:hover { background: var(--neutral-800); transform: translateY(-2px); }
+  .price-card .plan-note { margin: 12px 0 0; text-align: center; font-size: 0.8125rem; color: #a3a3a3; }
+  .price-card.plain .plan-note { color: var(--neutral-500); }
+  .guarantee {
+    margin: 28px auto 0;
+    max-width: 34rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--neutral-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .guarantee svg { width: 18px; height: 18px; color: var(--neutral-500); flex-shrink: 0; }
+
+  /* ---------- Comparativa ---------- */
+  .compare-grid { max-width: 48rem; margin: 44px auto 0; display: grid; gap: 20px; }
+  .compare-card { border-radius: 16px; padding: 28px 24px; }
+  .compare-card.them { background: #fff; border: 1px solid var(--neutral-200); }
+  .compare-card.us { background: var(--neutral-900); color: #fff; }
+  .compare-card h3 { margin: 0; font-size: 1.125rem; font-weight: 700; }
+  .compare-card.us h3 span { color: var(--cta); }
+  .compare-card ul { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+  .compare-card li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9375rem; line-height: 1.5; }
+  .compare-card.them li { color: var(--neutral-600); }
+  .compare-card li svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; }
+  .compare-card.them li svg { color: #b0b0b0; }
+  .compare-card.us li svg { color: var(--cta); }
+  .compare-cta { margin-top: 36px; text-align: center; }
+  .compare-cta .btn-cta { width: auto; }
+
+  /* ---------- Artículos ---------- */
+  .articles-list { max-width: 48rem; margin: 40px auto 0; }
+  .article-row { display: grid; gap: 16px; padding: 24px 0; border-top: 1px solid var(--neutral-200); align-items: center; }
+  .article-row:first-child { border-top: none; padding-top: 0; }
+  .article-row img { border-radius: 8px; aspect-ratio: 1280 / 850; object-fit: cover; width: 100%; }
+  .article-row .category {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cta);
+  }
+  .article-row h3 { margin: 8px 0 0; font-size: 1.25rem; line-height: 1.2; font-weight: 400; }
+  .article-row p.excerpt { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--neutral-600); }
+  .article-row .read-more {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+    border-bottom: 1px solid var(--neutral-900);
+    padding-bottom: 2px;
+  }
+  .articles-cta { margin-top: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .articles-cta .fine-print { margin: 0; font-size: 0.875rem; color: var(--neutral-500); }
+
+  /* ---------- Testimonios ---------- */
+  .quotes-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .quotes-grid { max-width: 64rem; margin: 40px auto 0; display: grid; gap: 16px; }
+  .quote-card { background: var(--paper); border: 1px solid var(--neutral-200); border-radius: 12px; padding: 28px 24px; }
+  .quote-card p.quote { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--neutral-800); font-weight: 400; }
+  .quote-card p.name {
+    margin: 18px 0 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--neutral-500);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 42rem; margin: 40px auto 0; }
+  .faq details { border-top: 1px solid var(--neutral-200); }
+  .faq details:last-child { border-bottom: 1px solid var(--neutral-200); }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-height: 44px;
+    padding: 20px 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .chev { flex-shrink: 0; transition: transform 0.2s ease; color: var(--neutral-500); }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq details p { margin: 0; padding: 0 4px 20px; font-size: 0.9375rem; line-height: 1.65; color: var(--neutral-600); }
+
+  /* ---------- Closer ---------- */
+  .closer { background: var(--neutral-900); color: #fff; text-align: center; padding: 72px 20px; }
+  .closer h2 { margin: 0; font-size: clamp(2rem, 7vw, 3.25rem); line-height: 1.05; font-weight: 400; }
+  .closer h2 em { color: var(--cta); font-style: italic; }
+  .closer p { margin: 18px 0 0; font-size: 1rem; color: #a3a3a3; }
+  .closer .cta-wrap { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .closer .fine-print { margin: 0; font-size: 0.875rem; color: #a3a3a3; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 32px 20px; }
+  .footer-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .footer-inner img { height: 18px; width: auto; opacity: 0.7; }
+  .footer-inner p { font-size: 0.8125rem; color: var(--neutral-500); margin: 0; text-align: center; }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 50;
+    background: #fff;
+    border-top: 1px solid var(--neutral-200);
+    box-shadow: 0 -12px 40px -12px rgba(0, 0, 0, 0.18);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    padding-bottom: env(safe-area-inset-bottom, 0); /* notch iPhone */
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .sticky-cta .offer-title { margin: 0; font-size: 0.875rem; font-weight: 700; color: var(--neutral-900); }
+  .sticky-cta .offer-sub { margin: 2px 0 0; font-size: 0.75rem; color: var(--neutral-500); }
+  .sticky-cta .btn-cta { width: auto; min-height: 44px; padding: 12px 20px; font-size: 0.9375rem; flex-shrink: 0; }
+
+  /* ============ Tablet / desktop ============ */
+  @media (min-width: 640px) {
+    section { padding: 72px 24px; }
+    .hero { padding: 56px 24px 72px; }
+    .hero .cta-wrap { flex-direction: row; align-items: center; }
+    .hero .cta-wrap .btn-cta { width: auto; }
+    .hero .fine-print { text-align: left; }
+    .stats { padding: 44px 24px; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .stat .num { font-size: 2.25rem; }
+    .article-row { grid-template-columns: 220px 1fr; gap: 24px; }
+    .compare-cta, .articles-cta { flex-direction: column; }
+    .footer-inner { flex-direction: row; }
+  }
+  @media (min-width: 768px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .quotes-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .compare-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .price-card { padding: 40px 36px; }
+  }
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 64px; }
+    .pricing-grid { grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <img src="assets/logo.png" alt="Whitepaper" width="1000" height="150" />
+    <a href="#suscribete" class="nav-cta">Suscríbete</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="proof-pill"><span class="dot" aria-hidden="true"></span>+14,500 empresarios ya lo leen</span>
+        <h1 class="font-display">Entiende los negocios de México en <em>5 minutos</em> al día</h1>
+        <p class="lead">
+          Cada mañana recibes en tu correo un briefing con las <strong>noticias de negocios que realmente importan</strong> — curado, explicado y sin ruido.
+        </p>
+        <div class="cta-wrap">
+          <a href="#suscribete" class="btn-cta">
+            <span>Empezar a leer</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#muestra" class="btn-ghost">Ver un ejemplo</a>
+        </div>
+        <p class="fine-print" style="margin-top:16px">Desde <strong>$132.50 MXN/mes</strong> · Cancela cuando quieras</p>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/mockup.jpg" alt="Vista previa del newsletter Whitepaper en un teléfono" width="1449" height="1600" fetchpriority="high" />
+        <figcaption>Así se ve Whitepaper en tu bandeja de entrada.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <p class="num">+<em>14,500</em></p>
+        <p class="label">suscriptores activos</p>
+      </div>
+      <div class="stat">
+        <p class="num">+<em>350</em></p>
+        <p class="label">artículos de análisis</p>
+      </div>
+      <div class="stat">
+        <p class="num"><em>5</em> min</p>
+        <p class="label">de lectura al día</p>
+      </div>
+      <div class="stat">
+        <p class="num"><em>3</em></p>
+        <p class="label">podcasts incluidos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section>
+    <div class="section-header">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2 class="font-display">Tu rutina de información, resuelta</h2>
+    </div>
+    <div class="wrap">
+      <div class="steps">
+        <div class="step">
+          <span class="num" aria-hidden="true">1</span>
+          <div>
+            <h3 class="font-display">Llega cada mañana</h3>
+            <p>Antes de tu primer café tienes el resumen del día: mercados, empresas y decisiones que mueven al país.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num" aria-hidden="true">2</span>
+          <div>
+            <h3 class="font-display">Lee en 5 minutos</h3>
+            <p>Sin clickbait ni relleno. Cada nota va al punto y explica por qué te debería importar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num" aria-hidden="true">3</span>
+          <div>
+            <h3 class="font-display">Profundiza cuando quieras</h3>
+            <p>Artículos de análisis, podcasts y un archivo completo para cuando un tema merece más tiempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="suscribete" class="pricing-section">
+    <div class="section-header">
+      <p class="eyebrow">Suscripción</p>
+      <h2 class="font-display">Elige tu plan</h2>
+      <p class="lead">Acceso completo a todo Whitepaper: el briefing diario, los artículos de análisis, los podcasts y el archivo.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <span class="tag">El más elegido · Ahorra 30%</span>
+        <h3 class="font-display">Plan anual</h3>
+        <p class="amount">$1,590 <span class="per">MXN / año</span></p>
+        <p class="strike"><s>$2,268</s> Equivale a $132.50 al mes</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Resumen diario (Whitepaper, hoy)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Artículos de análisis de empresas e industrias</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Podcasts y contenido en audio (Whitepaper Access)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Acceso al archivo completo (+350 artículos)</span></li>
+        </ul>
+        <a href="#" class="plan-cta">Suscribirme al plan anual</a>
+        <p class="plan-note">Pago único anual · Cancela cuando quieras</p>
+      </div>
+
+      <div class="price-card plain">
+        <h3 class="font-display">Plan mensual</h3>
+        <p class="amount">$189 <span class="per">MXN / mes</span></p>
+        <p class="strike">Renovación automática mes a mes</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Todo lo del plan anual</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Flexibilidad para cancelar en cualquier mes</span></li>
+        </ul>
+        <a href="#" class="plan-cta">Suscribirme al plan mensual</a>
+        <p class="plan-note">Sin permanencia</p>
+      </div>
+    </div>
+
+    <p class="guarantee">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+      <span>Pago seguro. Sin permanencia: cancela cuando quieras desde tu cuenta.</span>
+    </p>
+  </section>
+
+  <!-- COMPARATIVA -->
+  <section>
+    <div class="section-header">
+      <p class="eyebrow">La diferencia</p>
+      <h2 class="font-display">Lo gratuito te cuesta tu tiempo</h2>
+      <p class="lead">Cada día eliges entre scroll infinito o cinco minutos que sí te dejan algo.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card them">
+        <h3>Medios gratuitos</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Clickbait diseñado para que hagas scroll, no para que entiendas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Ruido: decenas de notas sin jerarquía ni contexto</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Comunicados reescritos, sin análisis del modelo de negocio</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Anuncios y contenido patrocinado disfrazado de noticia</span></li>
+        </ul>
+      </div>
+      <div class="compare-card us">
+        <h3>Con <span>Whitepaper</span></h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Solo las noticias que importan, curadas y explicadas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>5 minutos al día, directo en tu correo cada mañana</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Análisis a profundidad de empresas e industrias mexicanas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Sin anunciantes: el único cliente eres tú</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compare-cta">
+      <a href="#suscribete" class="btn-cta">
+        <span>Quiero leer mejor</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ARTÍCULOS / MUESTRA -->
+  <section id="muestra">
+    <div class="section-header">
+      <p class="eyebrow">Análisis a profundidad</p>
+      <h2 class="font-display">Lo que leerás como suscriptor</h2>
+      <p class="lead">Más de 350 artículos que explican cómo funcionan las empresas e industrias más importantes del país.</p>
+    </div>
+
+    <div class="articles-list">
+      <article class="article-row">
+        <img src="assets/article-tiendas-3b.webp" alt="¿Por qué hay tanto interés en Tiendas 3B?" width="1280" height="850" loading="lazy" decoding="async" />
+        <div>
+          <p class="category">Retail</p>
+          <h3 class="font-display"><a href="#">¿Por qué hay tanto interés en Tiendas 3B?</a></h3>
+          <p class="excerpt">Una radiografía de su modelo de negocios para entender por qué un retailer mexicano tan «tradicional» resulta tan atractivo para los inversionistas.</p>
+          <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="article-row">
+        <img src="assets/article-prolec.webp" alt="La venta" width="1280" height="850" loading="lazy" decoding="async" />
+        <div>
+          <p class="category">Industrial</p>
+          <h3 class="font-display"><a href="#">La venta</a></h3>
+          <p class="excerpt">Un múltiplo de 20x por el 50% de Prolec GE: ¿qué justifica el precio que GE Vernova le pagó a Xignux? Anatomía de una de las mayores operaciones de M&amp;A en México.</p>
+          <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="article-row">
+        <img src="assets/article-jumex.webp" alt="Jumex: sacándole jugo a su categoría" width="1280" height="850" loading="lazy" decoding="async" />
+        <div>
+          <p class="category">Consumo</p>
+          <h3 class="font-display"><a href="#">Jumex: sacándole jugo a su categoría</a></h3>
+          <p class="excerpt">La empresa mexicana lleva décadas liderando en jugos. Ahora el mercado evoluciona y enfrenta el reto de crecer con otros productos.</p>
+          <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="article-row">
+        <img src="assets/article-viva-volaris.webp" alt="Viva y Volaris: análisis del plan de fusión" width="1329" height="676" loading="lazy" decoding="async" />
+        <div>
+          <p class="category">Aviación</p>
+          <h3 class="font-display"><a href="#">Viva y Volaris: análisis del plan de fusión</a></h3>
+          <p class="excerpt">Las dos empresas que transformaron los viajes en avión quieren fusionarse en una misma organización. ¿Cuáles son las implicaciones?</p>
+          <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="articles-cta">
+      <a href="#suscribete" class="btn-cta" style="width:auto">
+        <span>Acceder al archivo completo</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <p class="fine-print">+350 artículos como estos, desde tu primer día.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="quotes-section">
+    <div class="section-header">
+      <p class="eyebrow">Lectores</p>
+      <h2 class="font-display">Por qué pagan por Whitepaper</h2>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <p class="quote font-display">"Hoy es necesario pagar por contenido de calidad, y no hay mucho. Gana más el lector pagando que perdiendo el tiempo con clickbait y contenido hueco."</p>
+        <p class="name">Fernando Núñez</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote font-display">"Va directo al punto sin perder profundidad. Inteligente, bien curado y fácil de digerir al mismo tiempo. Se volvió parte de mi rutina diaria."</p>
+        <p class="name">Gilberto Hernández</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote font-display">"En un entorno saturado de información pero carente de análisis real, Whitepaper ofrece la profundidad que afina la toma de decisiones estratégicas."</p>
+        <p class="name">Adán Méndez</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote font-display">"No he encontrado contenido como el que producen en ningún otro lugar. Para mí, es contenido que aporta muchísimo valor."</p>
+        <p class="name">Bernardo González</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-header">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="font-display">Antes de suscribirte</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>¿Qué recibo exactamente con mi suscripción?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></summary>
+        <p>El briefing diario en tu correo, todos los artículos de análisis, los podcasts (Whitepaper Hoy, Dark Side of the Road y Arquitectura de Negocios), el contenido en audio de Whitepaper Access y el archivo completo con más de 350 artículos.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar cuando quiera?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></summary>
+        <p>Sí. No hay permanencia. Puedes cancelar desde tu cuenta en cualquier momento y tu acceso se mantiene hasta el final del periodo ya pagado.</p>
+      </details>
+      <details>
+        <summary>¿Cuál es la diferencia entre el plan anual y el mensual?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></summary>
+        <p>El contenido es exactamente el mismo. El plan anual cuesta $1,590 MXN al año (equivalente a $132.50 al mes), un 30% menos que pagar mes a mes.</p>
+      </details>
+      <details>
+        <summary>¿Whitepaper es para mí si no soy empresario?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></summary>
+        <p>Si te interesa entender cómo funciona la economía y las empresas de México — seas directivo, inversionista, profesional o simplemente curioso — Whitepaper está escrito para ti: riguroso pero sin jerga innecesaria.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CLOSER -->
+  <section class="closer">
+    <div class="wrap-md">
+      <h2 class="font-display">Mañana en la mañana,<br />ya podrías estar <em>mejor informado</em></h2>
+      <p>Únete a +14,500 suscriptores que empiezan el día con Whitepaper.</p>
+      <div class="cta-wrap">
+        <a href="#suscribete" class="btn-cta" style="width:auto">
+          <span>Suscríbete ahora</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <p class="fine-print">Desde $132.50 MXN/mes · Cancela cuando quieras</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="Whitepaper" width="1000" height="150" loading="lazy" />
+      <p>© <span id="year"></span> Whitepaper. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <div>
+      <p class="offer-title">Plan anual: $1,590 MXN</p>
+      <p class="offer-sub">Ahorra 30% · Cancela cuando quieras</p>
+    </div>
+    <a href="#suscribete" class="btn-cta" tabindex="-1">
+      <span>Suscríbete</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var sticky = document.getElementById('stickyCta');
+  function handleScroll() {
+    var scrolled = window.scrollY;
+    var viewport = window.innerHeight;
+    var doc = document.documentElement.scrollHeight;
+    var distanceFromBottom = doc - (scrolled + viewport);
+    var visible = scrolled > viewport * 0.7 && distanceFromBottom > 120;
+    sticky.classList.toggle('visible', visible);
+    sticky.setAttribute('aria-hidden', String(!visible));
+    sticky.querySelector('a').tabIndex = visible ? 0 : -1;
+  }
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
+</script>
+
+</body>
+</html>

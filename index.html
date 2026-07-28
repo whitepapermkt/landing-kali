@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Whitepaper — Lo más importante, cada mañana.</title>
+<meta name="description" content="Enviamos a tu correo las noticias de negocios más importantes del día, en un formato fácil de leer." />
+<meta property="og:title" content="Whitepaper — Lo más importante, cada mañana." />
+<meta property="og:description" content="El medio de análisis empresarial que leen los empresarios mexicanos. Suscríbete y recibe cada mañana las noticias de negocios que importan." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_MX" />
+<meta property="og:site_name" content="Whitepaper" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Whitepaper — Lo más importante, cada mañana." />
+<meta name="twitter:description" content="El medio de análisis empresarial que leen los empresarios mexicanos." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cta: #ee4d3a;
+    --cta-hover: #e23a26;
+    --accent: #e60023;
+    --soft: #f3f3f1;
+    --ink: #111111;
+    --neutral-900: #171717;
+    --neutral-800: #262626;
+    --neutral-600: #525252;
+    --neutral-500: #737373;
+    --neutral-200: #e5e5e5;
+    --neutral-50: #fafafa;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  .font-display, .font-serif {
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+    letter-spacing: -0.015em;
+  }
+  main { width: 100%; padding-bottom: 96px; }
+  section { padding: 80px 24px; }
+  section.border-t { border-top: 1px solid var(--neutral-200); }
+  .wrap { margin: 0 auto; }
+  .wrap-sm { max-width: 42rem; }
+  .wrap-md { max-width: 48rem; }
+  .wrap-lg { max-width: 64rem; }
+  .wrap-xl { max-width: 72rem; }
+
+  /* Buttons */
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 999px;
+    background: var(--cta);
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 10px 30px -12px rgba(238, 77, 58, 0.6);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-cta:hover { background: var(--cta-hover); transform: translateY(-2px); }
+  .btn-cta svg { width: 20px; height: 20px; }
+
+  /* Hero */
+  .hero { padding: 100px 24px 48px; text-align: center; }
+  .hero-inner { max-width: 56rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .logo { height: 26px; width: auto; }
+  .hero h1 {
+    margin: 40px 0 0;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+  }
+  .hero p.lead {
+    margin: 32px auto 0;
+    max-width: 36rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--neutral-500);
+  }
+  .hero p.lead strong { font-weight: 600; color: var(--neutral-800); }
+  .hero .cta-wrap { margin-top: 32px; }
+  .hero .fine-print { margin-top: 20px; font-size: 0.875rem; color: var(--neutral-500); }
+  .hero .fine-print strong { font-weight: 600; color: var(--neutral-800); }
+
+  /* Mockup */
+  .mockup-section { padding: 0 24px 80px; }
+  .mockup-section .wrap { max-width: 42rem; }
+  .mockup-section img { border-radius: 12px; }
+
+  /* Section header */
+  .section-header { max-width: 42rem; margin: 0 auto; text-align: center; }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cta);
+    margin: 0;
+  }
+  .section-header h2 {
+    font-size: 2.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--neutral-900);
+    margin: 16px 0 0;
+    font-weight: 400;
+  }
+  .section-header h2.no-eyebrow { margin-top: 0; }
+  .section-header .lead {
+    margin: 20px 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--neutral-500);
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    max-width: 48rem;
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .price-card { position: relative; padding-top: 12px; }
+  .price-badge {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 999px;
+    background: var(--accent);
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #fff;
+  }
+  .price-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .price-box.dark { background: var(--neutral-900); color: #fff; }
+  .price-box.light { background: var(--neutral-50); border: 1px solid var(--neutral-200); }
+  .price-box h3 { font-size: 3rem; line-height: 1; margin: 0; font-weight: 400; }
+  .price-box .amount-wrap { margin-top: 32px; flex: 1; }
+  .price-box .amount { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.015em; }
+  .price-box .amount .cur { font-size: 1.5rem; font-weight: 500; color: #d4d4d4; }
+  .price-box.light .amount .cur { color: var(--neutral-500); }
+  .price-box .sub { margin-top: 8px; font-size: 0.875rem; color: #a3a3a3; }
+  .price-box.light .sub { color: var(--neutral-500); }
+  .price-box .plan-cta {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .price-box.dark .plan-cta { background: #fff; color: var(--neutral-900); }
+  .price-box.light .plan-cta { background: var(--neutral-900); color: #fff; }
+  .price-box .plan-cta:hover { transform: translateY(-2px); }
+
+  @media (min-width: 640px) {
+    .hero h1 { font-size: 72px; }
+    .section-header h2 { font-size: 3rem; }
+  }
+  @media (min-width: 768px) {
+    .hero h1 { font-size: 96px; line-height: 0.98; }
+    .pricing-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .articles-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Features */
+  .features-list { max-width: 28rem; margin: 56px auto 0; list-style: none; padding: 0; }
+  .features-list li { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; }
+  .features-list svg { flex-shrink: 0; width: 20px; height: 20px; margin-top: 4px; color: var(--accent); }
+  .features-list span { font-size: 1.125rem; color: var(--neutral-800); }
+  .social-proof { margin-top: 56px; text-align: center; }
+  .social-proof p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--neutral-500);
+    margin: 0;
+  }
+  .social-proof .cta-wrap { margin-top: 20px; }
+
+  /* Articles */
+  .articles-grid { max-width: 64rem; margin: 56px auto 0; display: grid; gap: 48px; }
+  .article-card a.thumb { display: block; overflow: hidden; border-radius: 8px; background: var(--neutral-50); }
+  .article-card a.thumb img { aspect-ratio: 1280 / 850; width: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .article-card a.thumb:hover img { transform: scale(1.02); }
+  .article-card .category {
+    margin: 20px 0 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cta);
+  }
+  .article-card h3 { margin: 8px 0 0; font-size: 1.5rem; line-height: 1.2; font-weight: 400; color: var(--neutral-900); }
+  .article-card p.excerpt { margin: 12px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--neutral-600); }
+  .article-card .read-more {
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cta);
+  }
+  .articles-footer { margin-top: 64px; text-align: center; }
+
+  /* Testimonials */
+  .testimonial-list { max-width: 42rem; margin: 56px auto 0; list-style: none; padding: 0; }
+  .testimonial-list li { padding: 40px 0; border-top: 1px solid var(--neutral-200); }
+  .testimonial-list li:first-child { border-top: none; padding-top: 0; }
+  .testimonial-list li:last-child { padding-bottom: 0; }
+  .testimonial-list p.quote { font-size: 1.5rem; line-height: 1.35; color: var(--neutral-900); margin: 0; font-weight: 400; }
+  .testimonial-list p.name {
+    margin: 20px 0 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--neutral-500);
+  }
+
+  /* Closer */
+  .closer { background: var(--neutral-50); text-align: center; }
+  .closer .wrap { max-width: 42rem; }
+  .closer h2 { font-size: 2.5rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--neutral-900); margin: 0; font-weight: 400; }
+  .closer p { margin: 24px 0 0; font-size: 1.125rem; color: var(--neutral-500); }
+  .closer .cta-wrap { margin-top: 32px; }
+  @media (min-width: 640px) { .closer h2 { font-size: 3rem; } }
+
+  /* Footer */
+  footer { padding: 40px 24px; }
+  .footer-inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .footer-inner img { height: 20px; width: auto; opacity: 0.7; }
+  .footer-inner p { font-size: 0.875rem; color: var(--neutral-500); margin: 0; }
+  @media (min-width: 640px) { .footer-inner { flex-direction: row; } }
+
+  /* Sticky CTA */
+  .sticky-cta {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 50;
+    border-top: 1px solid var(--neutral-800);
+    background: var(--neutral-900);
+    color: #fff;
+    box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.25);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+  .sticky-cta .offer-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cta);
+    margin: 0;
+  }
+  .sticky-cta .offer-title { margin: 4px 0 0; font-size: 1.125rem; color: #fff; font-weight: 400; }
+  .sticky-cta .btn-cta { padding: 12px 24px; font-size: 1rem; flex-shrink: 0; }
+  @media (min-width: 640px) {
+    .sticky-cta .offer-title { font-size: 1.5rem; }
+    .sticky-cta .btn-cta { padding: 14px 28px; font-size: 1.125rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="sticky-cta-inner">
+      <div>
+        <p class="offer-label">Oferta por tiempo limitado</p>
+        <p class="offer-title font-display">25% de descuento el primer año</p>
+      </div>
+      <a href="#suscribete" class="btn-cta" tabindex="-1">
+        <span>Suscríbete</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="logo" src="assets/logo.png" alt="Whitepaper" />
+      <h1 class="font-display">Lo más importante,<br />cada mañana.</h1>
+      <p class="lead">
+        Enviamos a tu correo las <strong>noticias de negocios</strong> más importantes del día, en un formato <strong>fácil de leer</strong>.
+      </p>
+      <div class="cta-wrap">
+        <a href="#suscribete" class="btn-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" /><path d="M19 8h2v10a2 2 0 0 1-2 2" /><line x1="7" y1="8" x2="15" y2="8" /><line x1="7" y1="12" x2="15" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
+          <span>Suscríbete</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="fine-print">Toma <strong>5 minutos</strong> leerlo.</p>
+    </div>
+  </section>
+
+  <!-- MOCKUP -->
+  <section class="mockup-section">
+    <div class="wrap">
+      <img src="assets/mockup.jpg" alt="Vista previa del newsletter Whitepaper" />
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="suscribete" class="border-t">
+    <div class="section-header">
+      <p class="eyebrow">Suscripción</p>
+      <h2 class="font-display">Suscríbete a Whitepaper</h2>
+      <p class="lead">Acceso completo al medio que leen los empresarios mexicanos.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <span class="price-badge">Ahorra 30%</span>
+        <div class="price-box dark">
+          <h3 class="font-display">Plan anual</h3>
+          <div class="amount-wrap">
+            <p class="amount">$1,590 <span class="cur">MXN</span></p>
+            <p class="sub">Equivale a $132.50 al mes</p>
+          </div>
+          <a href="#" class="plan-cta">Suscríbete</a>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-box light">
+          <h3 class="font-display">Plan mensual</h3>
+          <div class="amount-wrap">
+            <p class="amount">$189 <span class="cur">MXN</span></p>
+            <p class="sub">Renovación mes a mes</p>
+          </div>
+          <a href="#" class="plan-cta">Suscríbete</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="border-t">
+    <div class="section-header">
+      <p class="eyebrow">Qué incluye</p>
+      <h2 class="font-display">Todo lo que recibes</h2>
+    </div>
+
+    <ul class="features-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Resumen diario (Whitepaper, hoy)</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Análisis de empresas (Artículos principales)</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Podcast (Whitepaper Hoy, Dark Side of the Road y Arquitectura de Negocios)</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Whitepaper Access (Contenido en audio)</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg><span>Acceso al archivo completo</span></li>
+    </ul>
+
+    <div class="social-proof">
+      <p>Únete a +14,500 suscriptores</p>
+      <div class="cta-wrap">
+        <a href="#suscribete" class="btn-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" /><path d="M19 8h2v10a2 2 0 0 1-2 2" /><line x1="7" y1="8" x2="15" y2="8" /><line x1="7" y1="12" x2="15" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
+          <span>Suscríbete</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="border-t">
+    <div class="section-header">
+      <p class="eyebrow">Artículos principales</p>
+      <h2 class="font-display">Cómo funcionan las <em>empresas y industrias más exitosas</em> del país</h2>
+      <p class="lead">Más de 350 artículos de análisis a profundidad sobre empresas, sectores y movimientos estratégicos.</p>
+    </div>
+
+    <div class="articles-grid">
+      <article class="article-card">
+        <a class="thumb" href="#"><img src="assets/article-tiendas-3b.webp" alt="¿Por qué hay tanto interés en Tiendas 3B?" /></a>
+        <p class="category">Retail</p>
+        <h3 class="font-display"><a href="#">¿Por qué hay tanto interés en Tiendas 3B?</a></h3>
+        <p class="excerpt">Una radiografía de su modelo de negocios para tratar de entender por qué un retailer mexicano tan «tradicional» está resultando muy atractivo para los inversionistas.</p>
+        <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="article-card">
+        <a class="thumb" href="#"><img src="assets/article-prolec.webp" alt="La venta" /></a>
+        <p class="category">Industrial</p>
+        <h3 class="font-display"><a href="#">La venta</a></h3>
+        <p class="excerpt">Un múltiplo de 20x por el 50% de Prolec GE: ¿qué justifica el precio que GE Vernova le pagó a Xignux? Anatomía de una de las mayores operaciones de M&amp;A en México.</p>
+        <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="article-card">
+        <a class="thumb" href="#"><img src="assets/article-jumex.webp" alt="Jumex: sacándole jugo a su categoría" /></a>
+        <p class="category">Consumo</p>
+        <h3 class="font-display"><a href="#">Jumex: sacándole jugo a su categoría</a></h3>
+        <p class="excerpt">La empresa mexicana lleva décadas liderando en jugos. Ahora el mercado está evolucionando y se enfrenta al reto de crecer con otros productos.</p>
+        <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="article-card">
+        <a class="thumb" href="#"><img src="assets/article-viva-volaris.webp" alt="Viva y Volaris: análisis del plan de fusión" /></a>
+        <p class="category">Aviación</p>
+        <h3 class="font-display"><a href="#">Viva y Volaris: análisis del plan de fusión</a></h3>
+        <p class="excerpt">Las dos empresas que transformaron el mercado de los viajes en avión quieren ahora fusionarse dentro de una misma organización. ¿Cuáles son las implicaciones?</p>
+        <a href="#" class="read-more">Leer artículo <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+
+    <div class="articles-footer">
+      <a href="#suscribete" class="btn-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" /><path d="M19 8h2v10a2 2 0 0 1-2 2" /><line x1="7" y1="8" x2="15" y2="8" /><line x1="7" y1="12" x2="15" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
+        <span>Suscríbete</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="border-t">
+    <div class="section-header">
+      <p class="eyebrow">Lectores</p>
+      <h2 class="font-display">Por qué leen Whitepaper</h2>
+    </div>
+
+    <ul class="testimonial-list">
+      <li>
+        <p class="quote font-display">Hoy es necesario pagar por contenido de calidad, y no hay mucho. Gana más el lector pagando que perdiendo el tiempo con los clickbaits y el contenido hueco en los medios gratuitos.</p>
+        <p class="name">— Fernando Núñez</p>
+      </li>
+      <li>
+        <p class="quote font-display">Va directo al punto sin perder profundidad. Es difícil encontrar contenido de negocios que sea inteligente, bien curado y fácil de digerir al mismo tiempo. Se ha vuelto parte de mi rutina diaria.</p>
+        <p class="name">— Gilberto Hernández</p>
+      </li>
+      <li>
+        <p class="quote font-display">En un entorno saturado de información pero carente de análisis real, Whitepaper ofrece la profundidad que afina la toma de decisiones estratégicas.</p>
+        <p class="name">— Adán Méndez</p>
+      </li>
+      <li>
+        <p class="quote font-display">No he encontrado contenido como el que producen en ningún otro lugar. Para mí, es contenido que aporta muchísimo valor.</p>
+        <p class="name">— Bernardo González</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CLOSER -->
+  <section class="closer border-t">
+    <div class="wrap">
+      <h2 class="font-display">Lo más importante,<br />cada mañana.</h2>
+      <p>Únete a +14,500 suscriptores que ya leen Whitepaper.</p>
+      <div class="cta-wrap">
+        <a href="#suscribete" class="btn-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" /><path d="M19 8h2v10a2 2 0 0 1-2 2" /><line x1="7" y1="8" x2="15" y2="8" /><line x1="7" y1="12" x2="15" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
+          <span>Suscríbete</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t">
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="Whitepaper" />
+      <p>© <span id="year"></span> Whitepaper. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var sticky = document.getElementById('stickyCta');
+  function handleScroll() {
+    var scrolled = window.scrollY;
+    var viewport = window.innerHeight;
+    var doc = document.documentElement.scrollHeight;
+    var distanceFromBottom = doc - (scrolled + viewport);
+    var visible = scrolled > viewport * 0.7 && distanceFromBottom > 120;
+    sticky.classList.toggle('visible', visible);
+    sticky.setAttribute('aria-hidden', String(!visible));
+    var link = sticky.querySelector('a');
+    link.tabIndex = visible ? 0 : -1;
+  }
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
+</script>
+
+</body>
+</html>
