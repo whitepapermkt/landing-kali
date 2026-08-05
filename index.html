@@ -73,11 +73,11 @@
   .hero { background: #fff; border-bottom: 1px solid var(--neutral-200); padding: 32px 20px 40px; }
   .hero-grid { max-width: 72rem; margin: 0 auto; display: grid; gap: 16px; align-items: center; }
   .hero-copy { order: 1; align-self: center; width: 100%; max-width: 34rem; }
-  .hero-figure { order: 2; margin: 0; width: min(100%, 34rem); max-width: 34rem; justify-self: center; background: #f4e7db; border: none; border-radius: 0; box-shadow: none; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-figure { order: 2; margin: 0; width: min(100%, 38rem); max-width: 38rem; justify-self: center; background: #f4e7db; border: none; border-radius: 0; box-shadow: none; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .hero-actions { order: 3; width: 100%; max-width: 34rem; display: flex; flex-direction: column; align-items: flex-start; }
   .hero h1 { margin: 4px 0 0; font-size: clamp(2.75rem, 8vw, 4.25rem); line-height: 1.0; font-weight: 400; }
   .hero h1 em { font-style: italic; color: var(--cta); }
-  .hero p.lead { margin: 6px 0 0; max-width: 34rem; font-size: 1.0625rem; line-height: 1.5; color: var(--neutral-500); }
+  .hero p.lead { margin: 16px 0 0; max-width: 34rem; font-size: 1.0625rem; line-height: 1.5; color: var(--neutral-500); }
   .hero p.lead strong { font-weight: 600; color: var(--neutral-800); }
   .hero .cta-row { margin-top: 0; }
   .hero .signup-note { margin-top: 2px; }
@@ -235,7 +235,7 @@
   @media (min-width: 900px) {
     .hero-grid { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(24px, 3vw, 40px); align-items: center; }
     .hero-copy { order: 1; grid-column: 1; grid-row: 1; align-self: center; padding-top: 0; padding-right: 1rem; }
-    .hero-figure { order: 2; grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: center; width: min(100%, 34rem); max-width: 34rem; }
+    .hero-figure { order: 2; grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: center; width: min(100%, 38rem); max-width: 38rem; }
     .hero-actions { order: 3; grid-column: 1; grid-row: 2; justify-self: start; align-items: flex-start; margin-top: 8px; padding-right: 1rem; }
     .hero .cta-row { justify-self: start; margin-top: 0; align-self: flex-start; }
     .hero .signup-note { justify-self: start; margin-top: 4px; align-self: flex-start; }
