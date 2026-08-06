@@ -156,6 +156,14 @@
   .closer .price-line { margin: 22px auto 0; max-width: 34rem; font-size: 0.9375rem; line-height: 1.7; color: #a3a3a3; overflow-wrap: anywhere; word-break: break-word; }
   .closer .price-line b { color: #fff; font-weight: 600; }
 
+  /* ---------- Substack embed ---------- */
+  .substack-embed { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .substack-embed .section-header { max-width: 56rem; }
+  .substack-embed__frame { max-width: 72rem; margin: 28px auto 0; border: 1px solid var(--neutral-200); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 24px 44px -34px rgba(0, 0, 0, 0.3); }
+  .substack-embed__frame iframe { display: block; width: 100%; min-height: 760px; border: 0; }
+  .substack-embed__fallback { margin: 14px auto 0; text-align: center; font-size: 0.875rem; color: var(--neutral-500); }
+  .substack-embed__fallback a { color: var(--neutral-900); font-weight: 600; border-bottom: 1px solid var(--neutral-900); }
+
   /* ---------- FAQ ---------- */
   .faq { max-width: 42rem; margin: 28px auto 0; }
   .faq details { border-top: 1px solid var(--neutral-200); }
@@ -206,6 +214,7 @@
     .preview__item { padding: 13px 0; }
     .preview__hl { font-size: 1rem; }
     .preview__dek { font-size: 0.78rem; }
+    .substack-embed__frame iframe { min-height: 620px; }
     .closer { padding: 40px 16px; }
     .closer h2 { font-size: clamp(1.9rem, 7vw, 2.5rem); }
     .closer p.sub { font-size: 0.98rem; }
@@ -367,6 +376,19 @@
       <p class="sub">Activa tus 30 días de prueba sin costo de Whitepaper Hoy.</p>
       <p class="price-line">Después de 30 días, si decides continuar: desde <b>$132.50 al mes</b> ($1,590 al año).</p>
     </div>
+  </section>
+
+  <!-- SUBSTACK -->
+  <section class="substack-embed" id="substack-hoy">
+    <div class="section-header">
+      <p class="eyebrow">Edición completa</p>
+      <h2 class="font-display">Whitepaper Hoy — 06 de agosto de 2026</h2>
+      <p class="lead">Lee la edición embebida directamente desde Substack.</p>
+    </div>
+    <div class="substack-embed__frame">
+      <iframe src="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" title="Whitepaper Hoy del 06 de agosto de 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="substack-embed__fallback">Si no carga el embed, ábrelo directamente en <a href="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" target="_blank" rel="noopener">Substack</a>.</p>
   </section>
 
   <!-- FAQ -->

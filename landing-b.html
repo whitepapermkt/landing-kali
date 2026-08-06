@@ -338,6 +338,14 @@
     color: var(--neutral-500);
   }
 
+  /* ---------- Substack embed ---------- */
+  .substack-embed { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .substack-embed .section-header { max-width: 56rem; }
+  .substack-embed__frame { max-width: 72rem; margin: 28px auto 0; border: 1px solid var(--neutral-200); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 24px 44px -34px rgba(0, 0, 0, 0.3); }
+  .substack-embed__frame iframe { display: block; width: 100%; min-height: 760px; border: 0; }
+  .substack-embed__fallback { margin: 14px auto 0; text-align: center; font-size: 0.875rem; color: var(--neutral-500); }
+  .substack-embed__fallback a { color: var(--neutral-900); font-weight: 600; border-bottom: 1px solid var(--neutral-900); }
+
   /* ---------- FAQ ---------- */
   .faq { max-width: 42rem; margin: 40px auto 0; }
   .faq details { border-top: 1px solid var(--neutral-200); }
@@ -415,6 +423,7 @@
     .hero .cta-wrap { flex-direction: row; align-items: center; }
     .hero .cta-wrap .btn-cta { width: auto; }
     .hero .fine-print { text-align: left; }
+    .substack-embed__frame iframe { min-height: 860px; }
     .stats { padding: 44px 24px; }
     .stats-grid { grid-template-columns: repeat(4, 1fr); }
     .stat .num { font-size: 2.25rem; }
@@ -686,6 +695,19 @@
         <p class="name">Bernardo González</p>
       </div>
     </div>
+  </section>
+
+  <!-- SUBSTACK -->
+  <section class="substack-embed" id="substack-hoy">
+    <div class="section-header">
+      <p class="eyebrow">Edición completa</p>
+      <h2 class="font-display">Whitepaper Hoy — 06 de agosto de 2026</h2>
+      <p class="lead">Lee la edición embebida directamente desde Substack.</p>
+    </div>
+    <div class="substack-embed__frame">
+      <iframe src="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" title="Whitepaper Hoy del 06 de agosto de 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="substack-embed__fallback">Si no carga el embed, ábrelo directamente en <a href="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" target="_blank" rel="noopener">Substack</a>.</p>
   </section>
 
   <!-- FAQ -->
