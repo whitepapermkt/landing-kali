@@ -338,13 +338,15 @@
     color: var(--neutral-500);
   }
 
-  /* ---------- Substack embed ---------- */
+  /* ---------- Substack preview ---------- */
   .substack-embed { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
   .substack-embed .section-header { max-width: 56rem; }
-  .substack-embed__frame { max-width: 72rem; margin: 28px auto 0; border: 1px solid var(--neutral-200); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 24px 44px -34px rgba(0, 0, 0, 0.3); }
-  .substack-embed__frame iframe { display: block; width: 100%; min-height: 760px; border: 0; }
-  .substack-embed__fallback { margin: 14px auto 0; text-align: center; font-size: 0.875rem; color: var(--neutral-500); }
-  .substack-embed__fallback a { color: var(--neutral-900); font-weight: 600; border-bottom: 1px solid var(--neutral-900); }
+  .substack-embed__card { max-width: 46rem; margin: 28px auto 0; border: 1px solid var(--neutral-200); border-radius: 14px; background: #fff; box-shadow: 0 24px 44px -34px rgba(0, 0, 0, 0.3); padding: 26px 24px; }
+  .substack-embed__meta { margin: 0; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--cta); }
+  .substack-embed__title { margin: 10px 0 0; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; color: var(--neutral-900); }
+  .substack-embed__excerpt { margin: 14px 0 0; font-size: 1rem; line-height: 1.65; color: var(--neutral-600); }
+  .substack-embed__actions { margin-top: 22px; text-align: center; }
+  .substack-embed__actions .btn-cta { width: auto; }
 
   /* ---------- FAQ ---------- */
   .faq { max-width: 42rem; margin: 40px auto 0; }
@@ -423,7 +425,7 @@
     .hero .cta-wrap { flex-direction: row; align-items: center; }
     .hero .cta-wrap .btn-cta { width: auto; }
     .hero .fine-print { text-align: left; }
-    .substack-embed__frame iframe { min-height: 860px; }
+    .substack-embed__card { padding: 30px 28px; }
     .stats { padding: 44px 24px; }
     .stats-grid { grid-template-columns: repeat(4, 1fr); }
     .stat .num { font-size: 2.25rem; }
@@ -702,12 +704,19 @@
     <div class="section-header">
       <p class="eyebrow">Edición completa</p>
       <h2 class="font-display">Whitepaper Hoy — 06 de agosto de 2026</h2>
-      <p class="lead">Lee la edición embebida directamente desde Substack.</p>
+      <p class="lead">Substack bloquea el iframe en sitios externos, pero puedes abrir la edición completa en un clic.</p>
     </div>
-    <div class="substack-embed__frame">
-      <iframe src="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" title="Whitepaper Hoy del 06 de agosto de 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="substack-embed__card">
+      <p class="substack-embed__meta">Whitepaper Hoy</p>
+      <h3 class="substack-embed__title font-display">06 de agosto de 2026</h3>
+      <p class="substack-embed__excerpt">Las noticias de negocios que realmente importan, explicadas con contexto y sin ruido para que empieces el día mejor informado.</p>
+      <div class="substack-embed__actions">
+        <a href="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" class="btn-cta" target="_blank" rel="noopener">
+          <span>Leer edición completa</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
-    <p class="substack-embed__fallback">Si no carga el embed, ábrelo directamente en <a href="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" target="_blank" rel="noopener">Substack</a>.</p>
   </section>
 
   <!-- FAQ -->
