@@ -163,6 +163,10 @@
   .substack-embed__meta { margin: 0; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--cta); }
   .substack-embed__title { margin: 10px 0 0; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; color: var(--neutral-900); }
   .substack-embed__excerpt { margin: 14px 0 0; font-size: 1rem; line-height: 1.65; color: var(--neutral-600); }
+  .substack-embed__notes { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .substack-embed__notes li { margin: 0; }
+  .substack-embed__notes a { display: block; border: 1px solid var(--neutral-200); border-radius: 10px; padding: 12px 14px; font-size: 0.95rem; font-weight: 600; color: var(--neutral-900); background: #fff; transition: border-color 0.2s ease, background 0.2s ease; }
+  .substack-embed__notes a:hover { border-color: var(--cta); background: color-mix(in srgb, var(--cta) 6%, #fff); }
   .substack-embed__actions { margin-top: 22px; }
   .substack-embed__actions .btn-cta { width: auto; }
 
@@ -390,9 +394,13 @@
     <div class="substack-embed__card">
       <p class="substack-embed__meta">Whitepaper Hoy</p>
       <h3 class="substack-embed__title font-display">06 de agosto de 2026</h3>
-      <p class="substack-embed__excerpt">Las noticias de negocios que realmente importan, explicadas con contexto y sin ruido para que empieces el día mejor informado.</p>
+      <p class="substack-embed__excerpt">Preview de la edición (2 notas destacadas):</p>
+      <ul class="substack-embed__notes">
+        <li><a href="https://www.whitepaper.mx/p/whitepaper-hoy-4ff?r=8kmud2" target="_blank" rel="noopener">Crecimiento de MELI (y sus TPVs)</a></li>
+        <li><a href="https://www.whitepaper.mx/p/whitepaper-hoy-4ff?r=8kmud2" target="_blank" rel="noopener">Eli Lilly México</a></li>
+      </ul>
       <div class="substack-embed__actions cta-row cta-row--center">
-        <a href="https://www.whitepaper.mx/p/whitepaper-hoy-06-de-agosto-de-2026?r=8kmud2" class="btn-cta" target="_blank" rel="noopener">
+        <a href="https://www.whitepaper.mx/p/whitepaper-hoy-4ff?r=8kmud2" class="btn-cta" target="_blank" rel="noopener">
           <span>Leer edición completa</span>
           <span aria-hidden="true">→</span>
         </a>
