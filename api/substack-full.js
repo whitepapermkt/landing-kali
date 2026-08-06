@@ -34,10 +34,6 @@ module.exports = async function handler(req, res) {
   }
 
   const html = await upstream.text();
-  const bodyMatch = html.match(/"body_html":"((?:\\.|[^"\\])*)"/);
-  if (!bodyMatch) {
-    return res.status(502).json({ error: "Could not parse Substack body_html" });
-  }
 
   const titleMatch =
     html.match(/property="og:title" content="([^"]+)"/) ||
@@ -45,8 +41,38 @@ module.exports = async function handler(req, res) {
 
   const decodeEscaped = (value) => JSON.parse(`"${value.replace(/"/g, '\\"')}"`);
 
-  const bodyHtml = decodeEscaped(bodyMatch[1]).replace(/<script[\s\S]*?<\/script>/gi, "");
+  const extractBodyHtml = () => {
+    const preloadMatch = html.match(/window\._preloads\s*=\s*JSON\.parse\("((?:\\.|[^"\\])*)"\)/s);
+    if (preloadMatch) {
+      try {
+        const jsonText = JSON.parse(`"${preloadMatch[1]}"`);
+        const preloads = JSON.parse(jsonText);
+        const preloadBody = preloads && preloads.post && preloads.post.body_html;
+        if (typeof preloadBody === "string" && preloadBody.length > 0) {
+          return preloadBody;
+        }
+      } catch {
+        // Fall through to regex-based extraction.
+      }
+    }
+
+    const inlineBodyMatch = html.match(/"body_html":"((?:\\.|[^"\\])*)"/);
+    if (inlineBodyMatch) {
+      return decodeEscaped(inlineBodyMatch[1]);
+    }
+
+    return "";
+  };
+
+  const bodyHtml = extractBodyHtml().replace(/<script[\s\S]*?<\/script>/gi, "");
   const title = titleMatch ? titleMatch[1] : "Whitepaper, hoy";
+
+  if (!bodyHtml) {
+    return res.status(502).json({
+      error: "Could not parse Substack body_html",
+      detail: "No body_html found in Substack response payload.",
+    });
+  }
 
   if (bodyHtml.length < 400) {
     return res.status(424).json({
