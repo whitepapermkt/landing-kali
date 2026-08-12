@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#faf9f7" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 <style>
   /* ============================================================
      KALI × WHITEPAPER — Landing de activación (30 días de prueba)
@@ -32,6 +32,7 @@
 
     --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --editorial: "Spectral", Georgia, "Times New Roman", serif;
   }
 
   * { box-sizing: border-box; }
@@ -165,18 +166,18 @@
   .daily-notes__article { background: #fff; border: 0; }
   .daily-notes__kicker { margin: 0; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700; color: var(--neutral-900); }
   .daily-notes__body { margin-top: 18px; }
-  .daily-notes__body p { margin: 0 0 1.1em; font-size: clamp(1rem, 1.12vw, 1.12rem); line-height: 1.6; letter-spacing: -0.01em; color: var(--neutral-900); }
+  .daily-notes__body p { margin: 0 0 1.1em; font-family: var(--editorial); font-size: clamp(1rem, 1.12vw, 1.12rem); line-height: 1.6; letter-spacing: -0.01em; color: var(--neutral-900); }
   .daily-notes__body p strong { font-weight: 700; }
   .daily-notes__body p em { font-style: italic; color: var(--cta); font-weight: 700; }
   .daily-notes__body p a { color: var(--neutral-900); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .daily-notes__comment { margin-top: 22px; padding-left: 18px; border-left: 4px solid var(--cta); }
-  .daily-notes__comment p { margin: 0; font-size: clamp(1.02rem, 1.2vw, 1.2rem); line-height: 1.5; letter-spacing: -0.01em; }
+  .daily-notes__comment p { margin: 0; font-family: var(--editorial); font-size: clamp(1.02rem, 1.2vw, 1.2rem); line-height: 1.5; letter-spacing: -0.01em; }
   .daily-notes__spacer { height: 1px; background: var(--neutral-200); margin: 34px 0 0; }
   .daily-notes__section { margin-top: 28px; }
   .daily-notes__section h3 { margin: 0 0 16px; font-size: clamp(1.35rem, 1.9vw, 1.7rem); line-height: 1.15; letter-spacing: -0.03em; color: var(--neutral-900); }
-  .daily-notes__section p { margin: 0 0 1.05em; font-size: clamp(0.98rem, 1.08vw, 1.1rem); line-height: 1.6; letter-spacing: -0.01em; color: var(--neutral-900); }
+  .daily-notes__section p { margin: 0 0 1.05em; font-family: var(--editorial); font-size: clamp(0.98rem, 1.08vw, 1.1rem); line-height: 1.6; letter-spacing: -0.01em; color: var(--neutral-900); }
   .daily-notes__comment--secondary { margin-top: 18px; padding-left: 18px; border-left: 4px solid var(--cta); }
-  .daily-notes__comment--secondary p { margin: 0; font-size: clamp(1rem, 1.15vw, 1.15rem); line-height: 1.5; letter-spacing: -0.01em; }
+  .daily-notes__comment--secondary p { margin: 0; font-family: var(--editorial); font-size: clamp(1rem, 1.15vw, 1.15rem); line-height: 1.5; letter-spacing: -0.01em; }
   .daily-notes__comment--secondary em { font-style: italic; color: var(--cta); }
 
   /* ---------- FAQ ---------- */
