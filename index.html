@@ -169,14 +169,6 @@
   .substack-embed__notes a:hover { border-color: var(--cta); background: color-mix(in srgb, var(--cta) 6%, #fff); }
   .substack-embed__actions { margin-top: 22px; }
   .substack-embed__actions .btn-cta { width: auto; }
-  .substack-embed__full { margin-top: 20px; border-top: 1px solid var(--neutral-200); padding-top: 20px; }
-  .substack-embed__status { margin: 0; font-size: 0.9rem; color: var(--neutral-500); }
-  .substack-embed__full-title { margin: 0 0 12px; font-size: 1.25rem; color: var(--neutral-900); }
-  .substack-embed__body { font-size: 1rem; line-height: 1.7; color: var(--neutral-800); }
-  .substack-embed__body h1, .substack-embed__body h2, .substack-embed__body h3 { font-family: var(--serif); font-weight: 400; line-height: 1.2; color: var(--neutral-900); margin: 1.4em 0 0.6em; }
-  .substack-embed__body p { margin: 0.95em 0; }
-  .substack-embed__body ul, .substack-embed__body ol { padding-left: 1.1rem; }
-  .substack-embed__body a { color: var(--neutral-900); text-decoration: underline; text-underline-offset: 2px; }
 
   /* ---------- FAQ ---------- */
   .faq { max-width: 42rem; margin: 28px auto 0; }
@@ -397,7 +389,7 @@
     <div class="section-header">
       <p class="eyebrow">Edición completa</p>
       <h2 class="font-display">Whitepaper Hoy — 06 de agosto de 2026</h2>
-      <p class="lead">Substack bloquea el iframe en sitios externos, pero puedes abrir la edición completa en un clic.</p>
+      <p class="lead">Dos temas destacados de la edición para abrir el apetito.</p>
     </div>
     <div class="substack-embed__card">
       <p class="substack-embed__meta">Whitepaper Hoy</p>
@@ -412,9 +404,6 @@
           <span>Leer edición completa</span>
           <span aria-hidden="true">→</span>
         </a>
-      </div>
-      <div class="substack-embed__full" data-substack-full data-substack-slug="whitepaper-hoy-4ff">
-        <p class="substack-embed__status">Cargando nota completa…</p>
       </div>
     </div>
   </section>
@@ -466,32 +455,6 @@
 
 <script>
   (function () {
-    var substackMount = document.querySelector('[data-substack-full]');
-    if (substackMount) {
-      var slug = substackMount.getAttribute('data-substack-slug');
-      fetch('/api/substack-full?slug=' + encodeURIComponent(slug), { credentials: 'same-origin' })
-        .then(function (response) {
-          return response.json().then(function (payload) {
-            return { ok: response.ok, payload: payload };
-          });
-        })
-        .then(function (result) {
-          if (!result.ok) {
-            throw new Error((result.payload && (result.payload.detail || result.payload.error)) || 'No se pudo cargar la nota completa.');
-          }
-          substackMount.innerHTML =
-            '<h4 class="substack-embed__full-title font-display">' +
-            result.payload.title +
-            '</h4>' +
-            '<div class="substack-embed__body">' +
-            result.payload.bodyHtml +
-            '</div>';
-        })
-        .catch(function (error) {
-          substackMount.innerHTML = '<p class="substack-embed__status">' + error.message + '</p>';
-        });
-    }
-
     var sticky = document.getElementById('stickyCta');
     if (!sticky) return;
     var link = sticky.querySelector('a');
