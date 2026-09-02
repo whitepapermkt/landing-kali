@@ -522,9 +522,8 @@
   <div class="email-popup__card" role="dialog" aria-modal="true" aria-labelledby="emailPopupTitle">
     <button class="email-popup__close" type="button" aria-label="Cerrar" data-close-popup>×</button>
     <p class="email-popup__eyebrow">Whitepaper</p>
-    <h3 id="emailPopupTitle" class="email-popup__title">Registrate a Kali X Whitepaper</h3>
-    <p class="email-popup__text">Recibe cada mañana el briefing de negocios más claro para México, antes de que salga publicado.</p>
-    <p class="email-popup__text" style="margin-top: 8px;">Promociones exclusivas de Kali x Whitepaper.</p>
+    <h3 id="emailPopupTitle" class="email-popup__title">Registrate a Kali x Whitepaper</h3>
+    <p class="email-popup__text">Conoce más sobre Kali &amp; Whitepaper, desde el punto de vista de negocios.</p>
 
     <form class="email-popup__form" id="emailPopupForm" action="https://formspree.io/f/mdeozewe" method="POST">
       <input class="email-popup__field" type="email" name="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required />
@@ -534,7 +533,7 @@
           <span aria-hidden="true">→</span>
         </button>
       </div>
-      <p class="email-popup__note">Sin spam. Solo el briefing de Whitepaper.</p>
+      <p class="email-popup__note">Sin spam.</p>
     </form>
 
     <div class="email-popup__success" aria-live="polite">
@@ -585,15 +584,16 @@
     var hasSubmitted = localStorage.getItem('whitepaperEmailPopupSubmitted');
 
     function openPopup() {
-      if (hasSeenPopup || hasSubmitted) return;
+      if (hasSeenPopup || hasSubmitted || popup.classList.contains('visible')) return;
       popup.classList.add('visible');
       popup.setAttribute('aria-hidden', 'false');
-      localStorage.setItem('whitepaperEmailPopupSeen', 'true');
     }
 
     function closePopup() {
       popup.classList.remove('visible');
       popup.setAttribute('aria-hidden', 'true');
+      hasSeenPopup = 'true';
+      localStorage.setItem('whitepaperEmailPopupSeen', 'true');
     }
 
     closeButtons.forEach(function (button) {
@@ -607,7 +607,8 @@
     });
 
     window.addEventListener('scroll', function () {
-      if (window.scrollY > window.innerHeight * 0.5 && !popup.classList.contains('visible')) {
+      if (popup.classList.contains('visible')) return;
+      if (window.scrollY > window.innerHeight * 0.5 && !hasSeenPopup && !hasSubmitted) {
         openPopup();
       }
     }, { passive: true });
@@ -643,7 +644,7 @@
     });
 
     var popupTimeout = window.setTimeout(function () {
-      if (!hasSubmitted) openPopup();
+      if (!hasSubmitted && !hasSeenPopup) openPopup();
     }, 7000);
   })();
 </script>
