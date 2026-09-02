@@ -240,6 +240,28 @@
   .sticky-cta .offer-sub { margin: 2px 0 0; font-size: 0.75rem; color: var(--neutral-500); }
   .sticky-cta .btn-cta { width: auto; min-height: 44px; padding: 12px 20px; font-size: 0.9375rem; flex-shrink: 0; }
 
+  .email-popup { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s ease, visibility 0.25s ease; }
+  .email-popup.visible { opacity: 1; visibility: visible; pointer-events: auto; }
+  .email-popup__backdrop { position: absolute; inset: 0; background: rgba(17, 17, 17, 0.46); backdrop-filter: blur(3px); }
+  .email-popup__card { position: relative; width: min(100%, 30rem); background: #fff; border: 1px solid rgba(17,17,17,0.08); border-radius: 22px; box-shadow: 0 30px 80px -30px rgba(17,17,17,0.35); padding: 28px 22px 20px; }
+  .email-popup__close { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: var(--paper); color: var(--neutral-900); font-size: 1.4rem; cursor: pointer; }
+  .email-popup__eyebrow { margin: 0; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cta); font-weight: 700; }
+  .email-popup__title { margin: 10px 0 0; font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em; color: var(--neutral-900); }
+  .email-popup__title em { font-style: italic; color: var(--cta); }
+  .email-popup__text { margin: 12px 0 0; font-size: 0.98rem; line-height: 1.55; color: var(--neutral-600); }
+  .email-popup__form { margin-top: 18px; display: grid; gap: 12px; }
+  .email-popup__field { width: 100%; min-height: 52px; border: 1px solid var(--neutral-200); border-radius: 999px; padding: 0 18px; font: inherit; background: #fff; color: var(--neutral-900); }
+  .email-popup__field:focus { outline: 2px solid rgba(238,77,58,0.2); border-color: var(--cta); }
+  .email-popup__actions { display: flex; align-items: center; gap: 12px; }
+  .email-popup__actions .btn-cta { width: 100%; }
+  .email-popup__note { margin: 0; font-size: 0.76rem; color: var(--neutral-500); }
+  .email-popup__success { display: none; margin-top: 18px; padding: 16px 18px; border: 1px solid rgba(47, 136, 86, 0.2); background: rgba(47, 136, 86, 0.06); color: #1d5c3f; border-radius: 14px; font-size: 0.92rem; line-height: 1.5; }
+  .email-popup.submitted .email-popup__form,
+  .email-popup.submitted .email-popup__text,
+  .email-popup.submitted .email-popup__eyebrow,
+  .email-popup.submitted .email-popup__title { display: none; }
+  .email-popup.submitted .email-popup__success { display: block; }
+
   @media (max-width: 639px) {
     .topbar-inner { padding: 12px 16px; }
     .topbar .lockup { font-size: 1.2rem; }
@@ -495,6 +517,31 @@
 
 </main>
 
+<div id="emailPopup" class="email-popup" aria-hidden="true">
+  <div class="email-popup__backdrop" data-close-popup></div>
+  <div class="email-popup__card" role="dialog" aria-modal="true" aria-labelledby="emailPopupTitle">
+    <button class="email-popup__close" type="button" aria-label="Cerrar" data-close-popup>×</button>
+    <p class="email-popup__eyebrow">Whitepaper</p>
+    <h3 id="emailPopupTitle" class="email-popup__title">Sé de lo que <em>te interesa</em>.</h3>
+    <p class="email-popup__text">Déjanos tu correo para enviarte el briefing de negocios de la mañana antes de que salga publicado.</p>
+
+    <form class="email-popup__form" id="emailPopupForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <input class="email-popup__field" type="email" name="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required />
+      <div class="email-popup__actions">
+        <button class="btn-cta" type="submit">
+          <span>Quiero entrar</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <p class="email-popup__note">Sin spam. Solo el briefing de Whitepaper.</p>
+    </form>
+
+    <div class="email-popup__success" aria-live="polite">
+      ¡Listo! Ya tienes tu lugar en el briefing de la mañana.
+    </div>
+  </div>
+</div>
+
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta-inner">
     <div>
@@ -511,21 +558,92 @@
 <script>
   (function () {
     var sticky = document.getElementById('stickyCta');
-    if (!sticky) return;
-    var link = sticky.querySelector('a');
-    function onScroll() {
-      var scrolled = window.scrollY;
-      var viewport = window.innerHeight;
-      var doc = document.documentElement.scrollHeight;
-      var fromBottom = doc - (scrolled + viewport);
-      var visible = scrolled > viewport * 0.65 && fromBottom > 160;
-      sticky.classList.toggle('visible', visible);
-      sticky.setAttribute('aria-hidden', String(!visible));
-      if (link) link.tabIndex = visible ? 0 : -1;
+    if (sticky) {
+      var link = sticky.querySelector('a');
+      function onScroll() {
+        var scrolled = window.scrollY;
+        var viewport = window.innerHeight;
+        var doc = document.documentElement.scrollHeight;
+        var fromBottom = doc - (scrolled + viewport);
+        var visible = scrolled > viewport * 0.65 && fromBottom > 160;
+        sticky.classList.toggle('visible', visible);
+        sticky.setAttribute('aria-hidden', String(!visible));
+        if (link) link.tabIndex = visible ? 0 : -1;
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
     }
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+
+    var popup = document.getElementById('emailPopup');
+    var form = document.getElementById('emailPopupForm');
+    if (!popup || !form) return;
+
+    var closeButtons = popup.querySelectorAll('[data-close-popup]');
+    var hasSeenPopup = localStorage.getItem('whitepaperEmailPopupSeen');
+    var hasSubmitted = localStorage.getItem('whitepaperEmailPopupSubmitted');
+
+    function openPopup() {
+      if (hasSeenPopup || hasSubmitted) return;
+      popup.classList.add('visible');
+      popup.setAttribute('aria-hidden', 'false');
+      localStorage.setItem('whitepaperEmailPopupSeen', 'true');
+    }
+
+    function closePopup() {
+      popup.classList.remove('visible');
+      popup.setAttribute('aria-hidden', 'true');
+    }
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closePopup);
+    });
+
+    popup.addEventListener('click', function (event) {
+      if (event.target === popup || event.target.classList.contains('email-popup__backdrop')) {
+        closePopup();
+      }
+    });
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > window.innerHeight * 0.5 && !popup.classList.contains('visible')) {
+        openPopup();
+      }
+    }, { passive: true });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var emailInput = form.querySelector('input[name="email"]');
+      if (!emailInput || !emailInput.value.trim()) {
+        emailInput && emailInput.focus();
+        return;
+      }
+
+      var action = form.getAttribute('action') || '';
+      var isConfigured = action && action.indexOf('your-form-id') === -1;
+
+      if (!isConfigured) {
+        popup.classList.add('submitted');
+        localStorage.setItem('whitepaperEmailPopupSubmitted', 'true');
+        return;
+      }
+
+      fetch(action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function () {
+        popup.classList.add('submitted');
+        localStorage.setItem('whitepaperEmailPopupSubmitted', 'true');
+      }).catch(function () {
+        popup.classList.add('submitted');
+        localStorage.setItem('whitepaperEmailPopupSubmitted', 'true');
+      });
+    });
+
+    var popupTimeout = window.setTimeout(function () {
+      if (!hasSubmitted) openPopup();
+    }, 7000);
   })();
 </script>
 </body>
