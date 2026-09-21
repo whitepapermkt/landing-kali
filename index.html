@@ -231,6 +231,7 @@
   .daily-notes__media a { display: block; }
   .daily-notes__media img { display: block; width: min(100%, 42rem); height: auto; margin: 0 auto; border-radius: 12px; border: 1px solid rgba(23,23,23,0.08); }
   .daily-notes__divider { margin: 30px 0 0; height: 1px; background: var(--neutral-200); }
+  .daily-notes--archived { display: none; }
 
   /* ---------- FAQ ---------- */
   .faq { max-width: 42rem; margin: 28px auto 0; }
@@ -380,85 +381,83 @@
       <h2 id="daily-notes-title" class="font-display">21 de septiembre de 2026</h2>
       <p class="daily-notes__subtitle">Santacruz Silver en Bolivia; Salomon; Dialogus; el IPO de Oura; casas prefabricadas de China; The Boring Company; American Airlines; Blackstone adquiriendo marinas</p>
     </div>
-    <div class="activate-grid">
-      <div class="activate-media">
-        <aside class="preview" aria-label="Vista previa de Whitepaper Hoy">
-          <span class="preview__seal">30 días de prueba</span>
-          <div class="preview__head">
-            <span class="preview__label">Edición diaria</span>
-            <div class="preview__brand">Whitepaper Hoy</div>
-          </div>
-          <div class="preview__body">
-            <div class="preview__item">
-              <p class="preview__cat">En Bolivia</p>
-              <p class="preview__text"><strong>Santacruz Silver</strong>, que se especializa en plata, zinc, plomo y cobre, <em>adquirió</em> una planta de procesamiento en Bolivia con capacidad para <strong>500 toneladas diarias</strong>. La inversión total será de alrededor de $14 millones de dólares. La usarán para procesar una mayor cantidad de mineral comprado a terceros y así liberar capacidad en sus instalaciones para aumentar la producción de sus minas (<strong><em>Redacción Whitepaper</em></strong>).</p>
-              <p class="preview__comment"><strong><em>Comentario Whitepaper:</em></strong> la empresa <em>generó</em> ingresos por $241 millones de dólares durante el primer semestre —casi 70% más que un año antes. <em>Desde enero</em>, las acciones de Santacruz están listadas en Nasdaq. Su fundador es el regio Arturo Préstamo Elizondo.</p>
-            </div>
-            <div class="preview__item">
-              <p class="preview__cat">Gorpcore</p>
-              <p class="preview__text"><strong>Salomón</strong> destacó crecimientos de más de 30% en América Latina, donde tiene 55 tiendas (incluyendo <strong>como 25 en México</strong>). <em>Aseguran</em> que están superando a sus principales competidores en la Ciudad de México.</p>
-              <p class="preview__text">La marca es parte de <strong>Amer Sports</strong>, con sede en Finlandia, que es también dueña de marcas como Arc’teryx, Wilson y Atomic (<strong><em>Redacción Whitepaper</em></strong>).</p>
-              <p class="preview__comment"><strong><em>Comentario Whitepaper:</em></strong> el año pasado, <strong>Salomón generó más de $2,000 millones de dólares</strong>, de los cuales 17% provinieron de América. Estimamos que la marca habría ingresado alrededor de $50 millones de dólares en América Latina.</p>
-            </div>
-            <div class="preview__item">
-              <p class="preview__cat">Movimientos clave</p>
-              <ul class="preview__list">
-                <li><em>Camilo Perlaza</em> fue <strong>ascendido</strong> dentro de Netflix a CFO para América Latina.</li>
-                <li>En Alsea, Edgar Salgado asumió como director general de VIPS.</li>
-                <li>Fresnillo anunció la jubilación de su director financiero, Mario Arreguín, y nombró como su sucesor a Rodrigo Sandoval, quien se desempeñaba como CFO de Grupo Gigante.</li>
-                <li>Sergio Legorreta es el nuevo director global para el área legal de Clara. Antes estuvo en Baker McKenzie y en las áreas legales de X, Meta y Uber.</li>
-                <li>Daniel Salazar tomó el lugar de Jorge Flores como director general de Mega Alimentos. Salazar venía de trabajar cerca de 20 años en PepsiCo.</li>
-                <li>Capital Digital, la empresa de contenidos detrás de marcas como Pictoline y Chilango, eligió a Joaquín Colino como su nuevo CEO (<strong><em>Redacción Whitepaper</em></strong>).</li>
-              </ul>
-            </div>
-            <div class="preview__item">
-              <p class="preview__cat">En San Francisco</p>
-              <p class="preview__text">Dialogus es una startup fundada el año pasado que desarrolla agentes de voz personalizados capaces de realizar flujos completos sin intervención humana. Entre los clientes que ha conseguido están, por ejemplo, Total Play, KFC y Papa Johns.</p>
-              <p class="preview__text">Sus founders son Juberth Rodríguez, de 21 años; Rodrigo Terán, ex-Google y Meta, de 24 años; y Hans Ibarra, también ex-Google, de 20 años. En entrevista, Rodríguez nos contó que, tras ser seleccionado por Y Combinator para su batch S26, dejó el Tec de Monterrey para mudarse a San Francisco y enfocarse de tiempo completo en la empresa. Nos reveló que procesan entre 90,000 y 140,000 llamadas al día y que en los últimos tres meses han duplicado su tamaño mes a mes (<strong><em>Redacción Whitepaper</em></strong>).</p>
-            </div>
-            <div class="preview__item">
-              <p class="preview__cat">Breves</p>
-              <ul class="preview__list">
-                <li>Oura busca recaudar hasta $2,200 millones de dólares en su salida a bolsa. La empresa planea colocar 50 millones de acciones a un precio de entre $40 y $44 dólares. Así, podría alcanzar una valuación de $14,100 millones de dólares.</li>
-                <li>La compañía vendió alrededor de 3,600,000 anillos inteligentes durante el último año y, al 30 de junio, tenía más de 5,000,000 de miembros pagando una suscripción (Bloomberg).</li>
-                <li>En China hay más de 1,000 plantas que se dedican a producir casas prefabricadas. Creadas inicialmente para atender la demanda interna, están ahora apuntando a otros países y con ello el valor de las exportaciones de este tipo de estructuras se multiplicó 2.5 veces en los últimos cinco años (Reuters).</li>
-                <li>The Boring Company estaría planeando desarrollar un túnel para conectar Austin y San Antonio: un recorrido que actualmente toma cerca de 2 horas y media podría hacerse en menos de media hora utilizando su hyperloop (TechCrunch).</li>
-                <li>En American Airlines, 30% de los asientos disponibles en sus aviones generan más de la mitad de los ingresos. La aerolínea está reconvirtiendo sus aeronaves para aumentar el número de asientos de business (CNBC).</li>
-              </ul>
-            </div>
-            <div class="preview__item">
-              <p class="preview__cat">Para los yates</p>
-              <p class="preview__text">Blackstone lleva un par de años adquiriendo empresas que operan las marinas que dan servicio a los yates de particulares; tiene ya cerca de 200 instalaciones de este tipo.</p>
-              <p class="preview__text">“As the rich get richer, their boats are also getting bigger and more expensive. And all of those vessels need places to dock and get repairs” (NY Times).</p>
-              <p class="preview__comment"><strong><em>Comentario Whitepaper:</em></strong> la lógica de Blackstone es quedarse con infraestructura que por su naturaleza es escasa. Es por eso mismo que son también los socios de Fernando Chico Pardo en Carrix, la principal operadora de puertos en América.</p>
-            </div>
-          </div>
-          <div class="preview__foot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z"/><path d="M19 8h2v10a2 2 0 0 1-2 2"/><line x1="7" y1="8" x2="15" y2="8"/><line x1="7" y1="12" x2="15" y2="12"/></svg>
-            <span>Y así, cada mañana en tu correo.</span>
-          </div>
-        </aside>
-      </div>
-      <div class="activate-steps">
-        <div class="activate-steps__list">
-          <div class="step">
-            <span class="num font-display" aria-hidden="true">1</span>
-            <div><h3 class="font-display">Activa tu cuenta de Whitepaper</h3><p>Te llevamos al registro.</p></div>
-          </div>
-          <div class="step">
-            <span class="num font-display" aria-hidden="true">2</span>
-            <div><h3 class="font-display">Recíbelo cada mañana</h3><p>Whitepaper Hoy llega a tu bandeja de entrada.</p></div>
-          </div>
-          <div class="step">
-            <span class="num font-display" aria-hidden="true">3</span>
-            <div><h3 class="font-display">Tú decides si sigues</h3><p>A los 30 días decides si continúas. Sin compromiso.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
     <article class="daily-notes" aria-label="Nota editorial del día">
+      <p class="daily-notes__kicker">Entre minería, tecnología y negocios globales</p>
+
+      <div class="daily-notes__section">
+        <h3>En Bolivia</h3>
+        <p><strong>Santacruz Silver</strong>, que se especializa en plata, zinc, plomo y cobre, <strong>adquirió</strong> una planta de procesamiento en Bolivia con capacidad para <strong>500 toneladas diarias</strong>. La inversión total será de alrededor de $14 millones de dólares. La usarán para procesar una mayor cantidad de mineral comprado a terceros y así liberar capacidad en sus instalaciones para aumentar la producción de sus minas (<strong>Redacción Whitepaper</strong>).</p>
+      </div>
+
+      <div class="daily-notes__comment">
+        <p><strong>Comentario Whitepaper:</strong> la empresa <strong>generó</strong> ingresos por $241 millones de dólares durante el primer semestre —casi 70% más que un año antes. <strong>Desde enero</strong>, las acciones de Santacruz están listadas en Nasdaq. Su fundador es el regio Arturo Préstamo Elizondo.</p>
+      </div>
+
+      <div class="daily-notes__divider" aria-hidden="true"></div>
+
+      <div class="daily-notes__section">
+        <h3>Gorpcore</h3>
+        <p><strong>Salomon</strong> destacó crecimientos de más de 30% en América Latina, donde tiene 55 tiendas (incluyendo como 25 en México). Aseguran que están superando a sus principales competidores en la Ciudad de México.</p>
+        <p>La marca es parte de <strong>Amer Sports</strong>, con sede en Finlandia, que es también dueña de marcas como Arc’teryx, Wilson y Atomic (<strong>Redacción Whitepaper</strong>).</p>
+      </div>
+
+      <div class="daily-notes__comment--secondary">
+        <p><strong>Comentario Whitepaper:</strong> el año pasado, <strong>Salomon generó más de $2,000 millones de dólares</strong>, de los cuales 17% provinieron de América. Estimamos que la marca habría ingresado alrededor de $50 millones de dólares en América Latina.</p>
+      </div>
+
+      <div class="daily-notes__divider" aria-hidden="true"></div>
+
+      <div class="daily-notes__section">
+        <h3>Movimientos clave</h3>
+        <ul class="daily-notes__list">
+          <li><strong>Camilo Perlaza</strong> fue ascendido dentro de Netflix a CFO para América Latina.</li>
+          <li>En Alsea, Edgar Salgado asumió como director general de VIPS.</li>
+          <li>Fresnillo anunció la jubilación de su director financiero, Mario Arreguín, y nombró como su sucesor a Rodrigo Sandoval, quien se desempeñaba como CFO de Grupo Gigante.</li>
+          <li>Sergio Legorreta es el nuevo director global para el área legal de Clara. Antes estuvo en Baker McKenzie y en las áreas legales de X, Meta y Uber.</li>
+          <li>Daniel Salazar tomó el lugar de Jorge Flores como director general de Mega Alimentos. Salazar venía de trabajar cerca de 20 años en PepsiCo.</li>
+          <li>Capital Digital, la empresa de contenidos detrás de marcas como Pictoline y Chilango, eligió a Joaquín Colino como su nuevo CEO (Redacción Whitepaper).</li>
+        </ul>
+      </div>
+
+      <div class="daily-notes__divider" aria-hidden="true"></div>
+
+      <div class="daily-notes__section">
+        <h3>En San Francisco</h3>
+        <p>Dialogus es una startup fundada el año pasado que desarrolla agentes de voz personalizados capaces de realizar flujos completos sin intervención humana. Entre los clientes que ha conseguido están, por ejemplo, Total Play, KFC y Papa Johns.</p>
+        <p>Sus founders son Juberth Rodríguez, de 21 años; Rodrigo Terán, ex-Google y Meta, de 24 años; y Hans Ibarra, también ex-Google, de 20 años. En entrevista, Rodríguez nos contó que, tras ser seleccionado por Y Combinator para su batch S26, dejó el Tec de Monterrey para mudarse a San Francisco y enfocarse de tiempo completo en la empresa. Nos reveló que procesan entre 90,000 y 140,000 llamadas al día y que en los últimos tres meses han duplicado su tamaño mes a mes (Redacción Whitepaper).</p>
+      </div>
+
+      <div class="daily-notes__divider" aria-hidden="true"></div>
+
+      <div class="daily-notes__section">
+        <h3>Breves</h3>
+        <ul class="daily-notes__list">
+          <li>Oura busca recaudar hasta $2,200 millones de dólares en su salida a bolsa. La empresa planea colocar 50 millones de acciones a un precio de entre $40 y $44 dólares. Así, podría alcanzar una valuación de $14,100 millones de dólares.</li>
+          <li>La compañía vendió alrededor de 3,600,000 anillos inteligentes durante el último año y, al 30 de junio, tenía más de 5,000,000 de miembros pagando una suscripción (Bloomberg).</li>
+          <li>En China hay más de 1,000 plantas que se dedican a producir casas prefabricadas. Creadas inicialmente para atender la demanda interna, están ahora apuntando a otros países y con ello el valor de las exportaciones de este tipo de estructuras se multiplicó 2.5 veces en los últimos cinco años (Reuters).</li>
+          <li>The Boring Company estaría planeando desarrollar un túnel para conectar Austin y San Antonio: un recorrido que actualmente toma cerca de 2 horas y media podría hacerse en menos de media hora utilizando su hyperloop (TechCrunch).</li>
+          <li>En American Airlines, 30% de los asientos disponibles en sus aviones generan más de la mitad de los ingresos. La aerolínea está reconvirtiendo sus aeronaves para aumentar el número de asientos de business (CNBC).</li>
+        </ul>
+      </div>
+
+      <div class="daily-notes__divider" aria-hidden="true"></div>
+
+      <div class="daily-notes__section">
+        <h3>Para los yates</h3>
+        <p>Blackstone lleva un par de años adquiriendo empresas que operan las marinas que dan servicio a los yates de particulares; tiene ya cerca de 200 instalaciones de este tipo.</p>
+        <p>“As the rich get richer, their boats are also getting bigger and more expensive. And all of those vessels need places to dock and get repairs” (NY Times).</p>
+      </div>
+
+      <div class="daily-notes__comment--secondary">
+        <p><strong>Comentario Whitepaper:</strong> la lógica de Blackstone es quedarse con infraestructura que por su naturaleza es escasa. Es por eso mismo que son también los socios de Fernando Chico Pardo en Carrix, la principal operadora de puertos en América.</p>
+      </div>
+
+      <div class="daily-notes__cta">
+        <a class="btn-cta" href="https://www.whitepaper.mx/kalixwhitepaper" data-registro>Activar prueba</a>
+      </div>
+    </article>
+
+    <article class="daily-notes daily-notes--archived" aria-label="Nota editorial archivada">
       <p class="daily-notes__kicker">Entre industrial, talento y consumo</p>
 
       <div class="daily-notes__section">
